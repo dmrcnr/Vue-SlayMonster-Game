@@ -20,13 +20,17 @@
       <section id="monster" class="container">
         <h2>Monster Health</h2>
         <div class="healthbar">
-          <div class="healthbar__value" :style="monsterBarStyle"></div>
+          <div class="healthbar__value" :style="monsterBarStyle">
+            {{showMonsterHealth}}
+          </div>
         </div>
       </section>
       <section id="player" class="container">
         <h2>Your Health</h2>
         <div class="healthbar">
-          <div class="healthbar__value" :style="playerBarStyle"></div>
+          <div class="healthbar__value" :style="playerBarStyle">
+            {{showPlayerHealth}}
+          </div>
         </div>
       </section>
       <section v-if="winner" class="container">
@@ -46,7 +50,12 @@
       </section>
       <section id="log" class="container">
         <h2>Battle Log</h2>
-        <ul></ul>
+        <ul>
+          <li v-for="(log) in logMessages">
+            {{log}}
+            <hr v-if="log.includes('Monster')" />
+          </li>
+        </ul>
       </section>
     </div>
   </body>
