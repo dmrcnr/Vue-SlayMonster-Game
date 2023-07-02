@@ -57,6 +57,7 @@ const app = Vue.createApp({
   methods: {
     surrender() {
       this.winner = 'monster';
+      this.addLogMessage('Player', 'Surrended', '');
     },
     startNewGame() {
       this.playerHealth = 100;
