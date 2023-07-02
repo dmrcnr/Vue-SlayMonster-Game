@@ -53,7 +53,7 @@
         <ul>
           <li v-for="(log) in logMessages">
             {{log}}
-            <hr v-if="log.includes('Monster')" />
+            <hr v-if="log.includes('Monster') || log.includes('Surrended')" />
           </li>
         </ul>
       </section>
